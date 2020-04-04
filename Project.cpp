@@ -9,7 +9,6 @@ using namespace std;
 int balance(int a);
 int credit(int balance_old,string full_name,int a);
 int debit(int balance_old,string full_name,int a);
-bool dog;
 
 class cls 
 {
@@ -45,7 +44,7 @@ int debit(int balance_old,string full_name,int a)
 	}
 	file.open(full_name, ios::out);
 	file<<new_balance;
-	cout<<endl<<"Transaction_Successfull"<<endl<<"      ******"<<endl<<"Balance:"<<new_balance;
+	cout<<endl<<"Transaction Successfull"<<endl<<"      ******"<<endl<<"Balance:"<<new_balance;
 	file.close();
 	exit(0);
 }
@@ -53,7 +52,7 @@ int debit(int balance_old,string full_name,int a)
 int credit(int balance_old,string full_name,int a)
 {	int debit;
 	fstream file;
-	cout<<endl<<"Switching_To_Teller"<<endl<<"      **********"<<endl<<"Input Credential"<<endl;
+	cout<<endl<<"Switching_To_Teller_"<<endl<<"      **********"<<endl<<"Input_Credential_"<<endl;
 	string key="BTYrW";
 	string keyin;
 	cin>>keyin;
@@ -65,7 +64,7 @@ int credit(int balance_old,string full_name,int a)
 	file.open(full_name, ios::out);
 	file<<new_balance;
 	file.close();
-	cout<<endl<<"Transaction_Successfull"<<endl<<"      **********"<<endl<<"Balance:"<<new_balance;
+	cout<<endl<<"Transaction Successfull"<<endl<<"      **********"<<endl<<"Balance:"<<new_balance;
 	exit(0);
 	}
 	else
@@ -101,17 +100,18 @@ int interlude_balance(string full_name, int a, int balance)
 
 int admin(string full_name, int a)
 {
-cout<<endl<<"Switching_To_Teller"<<endl<<"Input_Credential"<<endl;
+cout<<endl<<"Switching_To_Teller_"<<endl<<"Input_Credential_"<<endl;
 string keys;
 cin>>keys;
 string predefined_key="BTYrW";
 if(keys==predefined_key)
-{	cout<<"Success"<<endl<<"********"<<endl<<"Amount?:";
+{	cout<<"Success"<<endl<<"*******"<<endl<<"Amount?:";
 	fstream file;
 	file.open(full_name,ios::out);
 	int k;
 	cin>>k;
 	file<<k;
+	cout<<endl<<"Transaction Successfull"<<endl<<"      **********";
 	interlude_balance(full_name,a,k);
 }
 else
@@ -158,9 +158,8 @@ int keys()
 		a++;
 		if (read==obj1.c||obj1.c==User_Defined_Key)
 	{	
-		
-		cout<<"Welcome_New_User "<<a<<endl;
-		cout<<"      *******";
+		cout<<endl<<"Welcome New User "<<a<<endl;
+		cout<<"     ********";
 		sign_up.close();
 		l=1;
 		balance(a);
@@ -169,15 +168,15 @@ int keys()
 	   if(l!=1)
 	{
 		
-		cout<<endl<<"Wrong_Key"<<endl;
+		cout<<endl<<"Wrong Key"<<endl;
 		cout<<"*********";
 		sign_up.close();
-    	cout<<endl<<"'S' to Sign Up, anything else to retry"<<endl;
+    	cout<<endl<<" 'S' to 's'ign Up, anything else to retry "<<endl;
     	char s='s';
 		char S='S';
     	if(getch()==s||S) 
 	{
-		cout<<"Input a key to sign up as new user, without spacaces"<<endl;
+		cout<<"  Input a key to sign up as new user, without spaces "<<endl;
 		cin>>User_Defined_Key;
 		sign_up.open("keys", ios::out| ios::ate| ios::app);
 		sign_up<<User_Defined_Key<<endl;
@@ -195,14 +194,13 @@ int keys()
 int main() 
 {
 	call.fx();
-	
 }
 
 int cls::fx()
 {	
-	cout<<endl<<"Welcome"<<endl;
+	cout<<endl<<"Welcome_"<<endl;
 	cout<<"********";
-	cout<<endl<<"Input Credential"<<endl;
+	cout<<endl<<"Input_Credential, Without_Spaces_"<<endl;
 	keys();
 }
 
