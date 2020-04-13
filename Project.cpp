@@ -28,9 +28,9 @@ int debit(int balance_old,string full_name,int a)
 	cout<<endl<<"Amount?:";
 	cin>>debit;
 	int new_balance=balance_old-debit;
-	if(new_balance<=0)
+	if(new_balance<0)
 	{
-	    cout<<endl<<"you want loan?";
+	    cout<<endl<<"you want loan?, yes or no"<<endl;
 		string a;
 		cin>>a;
 		if(a=="yes")
@@ -52,7 +52,7 @@ int debit(int balance_old,string full_name,int a)
 int credit(int balance_old,string full_name,int a)
 {	int debit;
 	fstream file;
-	cout<<endl<<"Switching_To_Teller_"<<endl<<"      **********"<<endl<<"Input_Credential_"<<endl;
+	cout<<endl<<"Switching_To_Teller_"<<endl<<"      **********"<<endl<<"Input_Tellers_Credential_"<<endl;
 	string key="BTYrW";
 	string keyin;
 	cin>>keyin;
@@ -69,7 +69,7 @@ int credit(int balance_old,string full_name,int a)
 	}
 	else
 	{
-	    cout<<endl<<"Wrong_Key";
+	    cout<<endl<<"Wrong_Key_";
         int credit(int balance_old,string full_name,int a);
 	}
 	
@@ -168,7 +168,7 @@ int keys()
 	   if(l!=1)
 	{
 		
-		cout<<endl<<"Wrong Key"<<endl;
+		cout<<endl<<"Wrong_Key_"<<endl;
 		cout<<"*********";
 		sign_up.close();
     	cout<<endl<<" 'S' to 's'ign Up, anything else to retry "<<endl;
